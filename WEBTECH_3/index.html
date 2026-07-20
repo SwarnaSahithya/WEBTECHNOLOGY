@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen Student Registration Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Interactive Rule & Instruction HUD Sidebar -->
+        <div class="rules-sidebar">
+            <h2>Registration Rules</h2>
+            <p class="subtitle">System security validation metrics</p>
+            
+            <ul class="rule-list">
+                <li id="rule-name" class="rule-item">Full Name must not be empty</li>
+                <li id="rule-roll" class="rule-item">Roll Number: Alphanumeric only</li>
+                <li id="rule-email" class="rule-item">Email: Structured format</li>
+                <li id="rule-mobile" class="rule-item">Mobile: Exactly 10 digits</li>
+                <li id="rule-password" class="rule-item">Password: Minimum 8 characters</li>
+                <li id="rule-match" class="rule-item">Passwords must match perfectly</li>
+                <li id="rule-gender" class="rule-item">Select a gender profile</li>
+                <li id="rule-dept" class="rule-item">Academic department chosen</li>
+                <li id="rule-dob" class="rule-item">Date of Birth provided</li>
+            </ul>
+        </div>
+
+        <!-- Main Registration Card -->
+        <div class="form-container">
+            <header>
+                <h1>Student Portal</h1>
+                <p>Initialize your academic student profile node</p>
+            </header>
+
+            <form id="registrationForm" novalidate>
+                <div class="form-grid">
+                    
+                    <!-- Full Name -->
+                    <div class="input-group full-width">
+                        <input type="text" id="fullName" placeholder=" " required>
+                        <label for="fullName">Full Name</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Roll Number -->
+                    <div class="input-group">
+                        <input type="text" id="rollNumber" placeholder=" " required>
+                        <label for="rollNumber">Roll Number</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Email ID -->
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email ID</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Mobile Number -->
+                    <div class="input-group">
+                        <input type="tel" id="mobileNumber" placeholder=" " required>
+                        <label for="mobileNumber">Mobile Number</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="input-group">
+                        <input type="date" id="dob" required>
+                        <label for="dob">Date of Birth</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder=" " required>
+                        <label for="password">Password</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="input-group">
+                        <input type="password" id="confirmPassword" placeholder=" " required>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Department Selection -->
+                    <div class="input-group">
+                        <select id="department" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="CSE">Computer Science & Engineering</option>
+                            <option value="ECE">Electronics & Comm. Engineering</option>
+                            <option value="EEE">Electrical Electronics Engineering</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="MECH">Mechanical Engineering</option>
+                            <option value="CIVIL">Civil Engineering</option>
+                            <option value="CHEMICAL">Chemical Department</option>
+                            <option value="CSM">CSM(AI&ML)</option>
+                            <option value="CSD">CSD(Data Science)</option>
+                        </select>
+                        <label for="department">Department</label>
+                        <div class="error-msg"></div>
+                    </div>
+
+                    <!-- Gender Multi-Option Toggles -->
+                    <div class="gender-card-wrapper">
+                        <div class="gender-title">Gender Designation</div>
+                        <div class="gender-toggle-container">
+                            <label class="gender-tile">
+                                <input type="radio" name="gender" value="Male">
+                                <span class="tile-btn">Male</span>
+                            </label>
+                            <label class="gender-tile">
+                                <input type="radio" name="gender" value="Female">
+                                <span class="tile-btn">Female</span>
+                            </label>
+                            <label class="gender-tile">
+                                <input type="radio" name="gender" value="Other">
+                                <span class="tile-btn">Other</span>
+                            </label>
+                        </div>
+                        <div class="error-msg" id="genderError"></div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-glow-btn">
+                    <span>Initialize Registration</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Feedback Overlay -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-glow-ring">✓</div>
+            <h2>Identity Confirmed!</h2>
+            <p>Verification successful. Your registration metrics have been saved accurately.</p>
+            <button class="dismiss-btn" id="closeModalBtn">Dismiss Node</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
