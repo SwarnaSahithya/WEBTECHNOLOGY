@@ -1,0 +1,320 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Example font */
+    color: #333;
+    background: #fdfdfd; /* Light patterned background hint */
+    background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ddd" fill-opacity="0.1"><circle cx="2" cy="2" r="2"/><circle cx="38" cy="2" r="2"/><circle cx="2" cy="38" r="2"/><circle cx="38" cy="38" r="2"/><path d="M11 11h18v18H11z"/></g></svg>');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-outer-container {
+    width: 95%;
+    max-width: 1200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+header {
+    background: linear-gradient(90deg, #3c36db, #2c1bc8);
+    padding: 15px 30px;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-item, .nav-icon {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.nav-item.active {
+    font-weight: bold;
+}
+
+.nav-icon i {
+    font-size: 18px;
+}
+
+/* --- Content Area --- */
+.content-area {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+/* --- Left Panel --- */
+.profile-panel {
+    width: 38%;
+    background: #fcfcfc;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.profile-pic-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-pic-container::after {
+    content: '';
+    position: absolute;
+    top: -4px; bottom: -4px; left: -4px; right: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    z-index: -1;
+}
+
+.profile-label {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #555;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.profile-basic-info h1 {
+    font-size: 24px;
+    color: #0b7fdb;
+    margin-bottom: 8px;
+}
+
+.profile-basic-info p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.profile-basic-info p strong {
+    color: #333;
+}
+
+.skills-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.skill-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+    text-align: center;
+}
+
+.skill-item i {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.skill-item span {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 5px;
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Specific Skill Colors */
+.html5 i { color: #e34f26; }
+.html5 .skill-level { background: #e34f26; }
+.css3 i { color: #1572b6; }
+.css3 .skill-level { background: #1572b6; }
+.python i { color: #306998; }
+.python .skill-level { background: #306998; }
+.java i { color: #5382a1; }
+.java .skill-level { background: #a15391; }
+
+.view-profile-btn {
+    background: linear-gradient(90deg, #b038da, #3cc0f1);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    margin: 0 auto;
+    transition: box-shadow 0.2s;
+}
+
+.view-profile-btn:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Right Panel --- */
+.info-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.academic-details, .notes-section {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.academic-header, .notes-header {
+    background: linear-gradient(90deg, #5235d3, #1b1ec8);
+    color: #fff;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.academic-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.academic-table th, .academic-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.academic-table th {
+    background: #fcfcfc;
+    color: #666666;
+    font-weight: normal;
+    border-bottom: 2px solid #eee;
+}
+
+.academic-table tbody tr:nth-child(even) {
+    background: #fdfdfd;
+}
+
+.academic-table td {
+    color: #444444;
+}
+
+.notes-section {
+    padding: 0;
+}
+
+.notes-header {
+    background: linear-gradient(90deg, #1e31af, #1e28b2);
+}
+
+.cert-list {
+    list-style: none;
+    padding: 20px;
+}
+
+.cert-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.cert-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background: linear-gradient(90deg, #353dd3, #351bc8);
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-icon {
+    color: #fff;
+    text-decoration: none;
+}
