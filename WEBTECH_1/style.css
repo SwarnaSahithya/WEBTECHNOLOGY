@@ -1,0 +1,445 @@
+/* ================= GLOBAL STYLES ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #050b1f, #0a1a3a, #020817);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(10, 20, 50, 0.4);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #4ea1ff;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #4ea1ff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #4ea1ff;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 80px 60px;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-content h4 {
+    font-size: 18px;
+    color: #a0b4ff;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    color: #4ea1ff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d0d8ff;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    background: #4ea1ff;
+    color: #000;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(78,161,255,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(78,161,255,0.7);
+}
+
+.btn2 {
+    background: transparent;
+    border: 2px solid #4ea1ff;
+    color: #4ea1ff;
+}
+
+/* ================= CONTACT CARD ================= */
+
+.contact-card {
+    width: 320px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+    color: #4ea1ff;
+}
+
+.contact-card p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #d0d8ff;
+}
+
+.contact-card a {
+    color: #4ea1ff;
+    text-decoration: none;
+}
+
+/* ================= SECTION TITLES ================= */
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 80px 0 40px;
+    color: #ffffff;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: #4ea1ff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #d0d8ff;
+    line-height: 1.7;
+}
+
+/* ================= EDUCATION ================= */
+
+.education-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.edu-card {
+    width: 300px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.edu-card:hover {
+    transform: translateY(-10px);
+    border-color: #4ea1ff;
+}
+/* ================= SKILLS ================= */
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 50px;
+}
+
+.skill-card {
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: #d0d8ff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(78,161,255,0.2);
+    border-color: #4ea1ff;
+}
+
+/* ================= PROJECTS ================= */
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.project-card {
+    width: 280px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #4ea1ff;
+}
+
+/* ================= CERTIFICATES ================= */
+
+.certificate-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.certificate-card {
+    width: 280px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+    border-color: #4ea1ff;
+}
+
+/* ================= INTERNSHIP & HACKATHON ================= */
+
+.internship .glass-card,
+.hackathon .glass-card {
+    width: 70%;
+    margin: auto;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    line-height: 2;
+}
+
+.contact-box a {
+    color: #4ea1ff;
+    text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 80px;
+    padding: 25px;
+    text-align: center;
+    background: rgba(10,20,50,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #a0b4ff;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1024px) {
+
+    header {
+        padding: 15px 30px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 30px 50px;
+    }
+
+    .contact-card {
+        width: 90%;
+    }
+
+    .glass-card,
+    .contact-box {
+        width: 90%;
+    }
+
+    .education-container,
+    .skills-grid,
+    .project-container,
+    .certificate-grid {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .skill-card,
+    .project-card,
+    .certificate-card {
+        width: 90%;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Center and scale the profile image container */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Control the explicit size of your picture */
+.hero-profile-img {
+    width: 150px;          /* Adjust this width to make it smaller or larger */
+    height: 150px;         /* Keeps it square */
+    object-fit: cover;     /* Prevents stretching/distortion */
+    border-radius: 50%;    /* Optional: Makes the picture a neat circle */
+    border: 3px solid #00eeee; /* Optional: Adds a matching glow border */
+    box-shadow: 0 0 15px rgba(0, 238, 238, 0.3);
+}
